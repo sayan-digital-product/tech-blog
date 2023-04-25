@@ -8,18 +8,40 @@
     color: var(--secondary-text);
 }
 
+
 .pageContainer {
     position: relative;
-    top: 5rem;
-    
 }
 
 .applicationNavcontainer {
     border-top: 1px solid #222;
     height: 5rem;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     background: var(--navbar-hex);
     z-index: 10;
+}
+
+.profileContainer{
+    height: 75vh;
+    display: grid;
+    align-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.nameFont {
+    font-family: CalibreBold;
+    font-size: 4rem;
+}
+
+.tagFont{
+    font-family: CalibreBold;
+    font-size: 2rem;
+}
+  
+.tagLineStyle{
+    position: relative;
+    top: 20%;
 }

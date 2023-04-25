@@ -27,6 +27,8 @@
   --navbar-hex: #004953;
   --color-primary: 255 115 179;
 
+  --border-color-hex: rgb(248, 224, 199);
+
 
 }
 
@@ -47,4 +49,18 @@ body {
 
 a.nav-link:hover{
   color: var(--light-green-rgb);
+}
+
+.secondary-text {
+  color: var(--dark-color-hex);
+}
+
+.minimum-height{
+  min-height: 85vh;
+}
+
+.generic-border {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--border-color-hex);
 }

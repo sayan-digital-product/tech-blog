@@ -18,6 +18,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       'white': '#ffffff',
+      'error': '#ff0000',
       'teal': {
         50: '#f0fdfa',
         100: '#ccfbf1',
