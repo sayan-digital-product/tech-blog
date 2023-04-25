@@ -1,0 +1,25 @@
+.footerContainer{
+    border-top: 1px solid #222;
+    height: 6rem;
+    margin-top: 2rem;
+    bottom: 0;
+    width: 100%;
+    background: var(--navbar-hex);
+    color: var(--secondary-text);
+}
+
+.pageContainer {
+    position: relative;
+    top: 5rem;
+    
+}
+
+.applicationNavcontainer {
+    border-top: 1px solid #222;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--navbar-hex);
+    z-index: 10;
+}

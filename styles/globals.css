@@ -2,26 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: CalibreBold;
+	src: url('/fonts/CalibreBold.otf');
+}
+
+@font-face {
+	font-family: CalibreSemibold;
+	src: url('/fonts/CalibreSemibold.otf');
+}
+
+@font-face {
+	font-family: CalibreRegular;
+	src: url('/fonts/CalibreRegular.otf');
+}
+ 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: #F3EFE0;
+  --background-hex: #faf0e6;
+  --secondary-text: #f8f8f8;
+  --light-green-rgb: #57f71e;
+  --dark-color-hex: #4D455D;
+  --navbar-hex: #004953;
+  --color-primary: 255 115 179;
+
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: #E96479;
+    --background-end-rgb: #4D455D;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: CalibreRegular;
+  background: var(--background-hex);
+    /* background: -webkit-linear-gradient(360deg, var(--background-start-rgb) 45%, var(--background-end-rgb) 45%) */
+}
+
+a.nav-link:hover{
+  color: var(--light-green-rgb);
 }
