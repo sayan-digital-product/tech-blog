@@ -20,7 +20,8 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: #F3EFE0;
-  --background-hex: #faf0e6;
+  /* --background-hex: #faf0e6; */
+  --background-hex: #EFEFEF;
   --secondary-text: #f8f8f8;
   --light-green-rgb: #57f71e;
   --dark-color-hex: #4D455D;

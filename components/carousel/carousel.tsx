@@ -4,6 +4,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Image from 'next/image';
 import { SlidesModel } from "@santech/core/models/slides.model";
 // import styles from "../styles/Responsive.module.css";
+import style from './carousel.module.css';
+import { IKImage, IKContext } from 'imagekitio-react'
+
+
 export default function ResponsiveCarousel() {
 
     return (
@@ -12,14 +16,17 @@ export default function ResponsiveCarousel() {
           showArrows={true}
             showIndicators={true}
             infiniteLoop={true}
-           dynamicHeight={true}
+           dynamicHeight={false}
           >
             {slides.map((item: SlidesModel) => (
-              <div key={item.id}>
-                <div>
-                  <img src={item.imageUrl} alt="slides" />
+              <div className={`grid grid-cols-12 ${style.carouselContainer}`} key={item.id}>
+                <div className="col-span-6">
+                  {item?.imageUrl && 
+                    <IKContext urlEndpoint="https://ik.imagekit.io/gglohxep8">
+                        <IKImage src={item.imageUrl} alt="slides" />
+                    </IKContext>}
                 </div>
-                <div>
+                <div className="col-span-6">
                   <h2>{item.title}</h2>
                   <p>{item.text}</p>
                 </div>

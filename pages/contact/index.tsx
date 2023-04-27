@@ -13,11 +13,24 @@ import Typography from '@mui/material/Typography';
 
 export default function Contact() {
 
-    const [reason, setReason] = React.useState('Casual connect');
+    const [formData, setFormData] = React.useState({
+        name: "",
+        email: "",
+        reason: "",
+        message: ""
+    });
 
-    const handleChange = (event: SelectChangeEvent<string>): void => {
-        console.log("Selected value", event);
-        setReason(event?.target?.value);
+    const handleChange = (e: any) => {
+        const { name, value } = e.target;
+        setFormData({
+          ...formData,
+          [name]: value,
+        });
+      };
+    
+
+    function handleSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+        console.log("Hello");
     }
 
     return(
@@ -45,19 +58,26 @@ export default function Contact() {
                                     <TextField
                                     id="user-name"
                                     label="Name"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
                                     />
                                     <TextField
                                     id="user-email"
                                     label="Email"
                                     placeholder="Email id"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
                                     />
                                     <FormControl sx={{ m: 1, minWidth: '96%' }} size="small">
                                         <InputLabel id="demo-select-small-label">Reason</InputLabel>
                                         <Select
                                             labelId="demo-select-small-label"
                                             id="demo-select-small"
-                                            value={reason}
+                                            value={formData.reason}
                                             label="Age"
+                                            name="reason"
                                             onChange={handleChange}
                                         >
                                             <MenuItem value="">
@@ -72,12 +92,15 @@ export default function Contact() {
                                     <TextField
                                     id="user-message"
                                     label="Message"
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
                                     multiline
                                     rows={5}
                                     />
                                 </div>
                                 <div className="action-buttons flex justify-end mt-4 mb-8">
-                                    <Button variant="contained" size="medium" className='m-4 bg-teal-900'>Submit</Button>
+                                    <Button variant="contained" size="medium" className='m-4 bg-teal-900' onClick={(event) => handleSubmit(event)}>Submit</Button>
                                     <Button variant="contained" size="medium" className='m-4 bg-error'>Reset</Button>
                                 </div>
                             </Box>

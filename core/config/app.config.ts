@@ -3,7 +3,7 @@ export const navbarList = [
     {
         name: "Home",
         key: "home",
-        url: ""
+        url: "."
     },
     {
         name: "About",
