@@ -5,8 +5,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Link from 'next/link';
+import { PostcardModel } from './post-card.interface';
 
-export default function PostCard({data}: {data: any}) {
+export default function PostCard({data}: {data: PostcardModel}) {
   return (
     <Card elevation={2}>
       <CardMedia
@@ -24,7 +26,11 @@ export default function PostCard({data}: {data: any}) {
         })}
       </CardContent>
       <CardActions className='justify-end'>
-        <Button color="primary" variant="text" size="small">Read more</Button>
+        <Button color="primary" variant="text" size="small">
+          {data.linkUrl && <Link href={data.linkUrl}>
+            Read more
+          </Link>}
+        </Button>
       </CardActions>
     </Card>
   );

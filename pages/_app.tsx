@@ -5,6 +5,7 @@ import type { AppProps } from 'next/app'
 import ApplicationNavbar from "@santech/components/nav-item/nav-item"
 
 import style from '@santech/styles/home.module.css';
+import Footer from '@santech/components/footer/footer';
 
 export default function App({ Component, pageProps }: AppProps) {
   return(
@@ -24,6 +25,9 @@ export default function App({ Component, pageProps }: AppProps) {
         </section>
         <section className="col-span-1"></section>
       </main>
+      <section>
+        <Footer />
+      </section>
     </>
   )
 }

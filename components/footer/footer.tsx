@@ -15,8 +15,7 @@ export default function Footer() {
                 </section>
                 <section className="grid grid-rows-1 grid-cols-1 gap-4">
                 <div className="grid grid-rows-1 grid-cols-1 gap-4 justify-items-center items-center">
-                    <div>Bangalore, Karnataka, India</div>
-                    <div><u>sayan.official87@gmail.com</u></div>
+                    <div>This site has been developed by @Sayan Banerjee</div>
                 </div>
                 </section>
                 <section className="grid grid-rows-1 grid-cols-2 gap-4">

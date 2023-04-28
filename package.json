@@ -20,6 +20,7 @@
     "bootstrap": "^5.2.3",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
+    "gray-matter": "^4.0.3",
     "imagekitio-react": "^2.0.0",
     "next": "13.3.1",
     "postcss": "8.4.23",
@@ -28,6 +29,8 @@
     "react-hook-form": "^7.43.9",
     "react-responsive-carousel": "^3.2.23",
     "reactstrap": "^9.1.9",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.2",
     "tailwindcss": "3.3.1",
     "typescript": "5.0.4"
   }

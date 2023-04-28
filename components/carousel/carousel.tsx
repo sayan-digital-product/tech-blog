@@ -6,6 +6,7 @@ import { SlidesModel } from "@santech/core/models/slides.model";
 // import styles from "../styles/Responsive.module.css";
 import style from './carousel.module.css';
 import { IKImage, IKContext } from 'imagekitio-react'
+import { imageBaseurl } from '@santech/core/config/app.config';
 
 
 export default function ResponsiveCarousel() {
@@ -16,17 +17,19 @@ export default function ResponsiveCarousel() {
           showArrows={true}
             showIndicators={true}
             infiniteLoop={true}
-           dynamicHeight={false}
+            dynamicHeight={false}
+            transitionTime={500}
+            interval={2000}
           >
             {slides.map((item: SlidesModel) => (
               <div className={`grid grid-cols-12 ${style.carouselContainer}`} key={item.id}>
                 <div className="col-span-6">
                   {item?.imageUrl && 
-                    <IKContext urlEndpoint="https://ik.imagekit.io/gglohxep8">
+                    <IKContext urlEndpoint={imageBaseurl.imageBase}>
                         <IKImage src={item.imageUrl} alt="slides" />
                     </IKContext>}
                 </div>
-                <div className="col-span-6">
+                <div className="grid col-span-6 content-center">
                   <h2>{item.title}</h2>
                   <p>{item.text}</p>
                 </div>

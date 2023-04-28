@@ -5,7 +5,6 @@ import { PostcardModel } from '@santech/components/post-card/post-card.interface
 import PostCard from '@santech/components/post-card/post-card'
 
 import style from './blog.module.css';
-import Footer from '@santech/components/footer/footer';
 import Paper from '@mui/material/Paper';
 import ResponsiveCarousel from '@santech/components/carousel/carousel';
 
@@ -23,9 +22,6 @@ export default function BlogSlides() {
                     })}
                 </section >
             </section>
-            {/* <section>
-                <Footer />
-            </section> */}
         </>
     )
 }

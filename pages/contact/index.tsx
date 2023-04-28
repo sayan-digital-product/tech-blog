@@ -27,6 +27,16 @@ export default function Contact() {
           [name]: value,
         });
       };
+
+    const resetForm = (e: any) => {
+        const defaultForm = {
+            name: "",
+            email: "",
+            reason: "",
+            message: ""
+        }
+        setFormData(defaultForm);
+    }
     
 
     function handleSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
@@ -101,7 +111,7 @@ export default function Contact() {
                                 </div>
                                 <div className="action-buttons flex justify-end mt-4 mb-8">
                                     <Button variant="contained" size="medium" className='m-4 bg-teal-900' onClick={(event) => handleSubmit(event)}>Submit</Button>
-                                    <Button variant="contained" size="medium" className='m-4 bg-error'>Reset</Button>
+                                    <Button variant="contained" size="medium" className='m-4 bg-error' onClick={(event) => resetForm(event)}>Reset</Button>
                                 </div>
                             </Box>
                         </div>

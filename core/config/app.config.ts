@@ -3,12 +3,7 @@ export const navbarList = [
     {
         name: "Home",
         key: "home",
-        url: "."
-    },
-    {
-        name: "About",
-        key: "aboutme",
-        url: "/aboutme"
+        url: "/"
     },
     {
         name: "Posts",
@@ -21,3 +16,7 @@ export const navbarList = [
         url: "/contact"
     }
 ]
+
+export const imageBaseurl = {
+    imageBase: "https://ik.imagekit.io/gglohxep8"
+}
