@@ -25,7 +25,7 @@ export default function Home() {
           </div>
         </div>
         <div className="col-span-6">
-          <Image alt='profile-image' src={'/images/profile.png'} className={style.fullImage} width={500} height={500}></Image>
+          {/* <Image alt='profile-image' src={'/images/profile.png'} className={style.fullImage} width={500} height={500}></Image> */}
         </div>
       {/* </Paper> */}
     </section>

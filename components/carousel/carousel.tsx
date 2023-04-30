@@ -12,17 +12,20 @@ import { imageBaseurl } from '@santech/core/config/app.config';
 export default function ResponsiveCarousel() {
 
     return (
-      <div>
+      <div> 
        <Carousel
-          showArrows={true}
+            showArrows={true}
             showIndicators={true}
             infiniteLoop={true}
             dynamicHeight={false}
             transitionTime={500}
             interval={2000}
+            autoPlay={true}
+            showStatus={false}
+            stopOnHover={true}
           >
             {slides.map((item: SlidesModel) => (
-              <div className={`grid grid-cols-12 bg-card-background ${style.carouselContainer}`} key={item.id}>
+              <div className={`grid grid-cols-12 bg-cardBackground ${style.carouselContainer}`} key={item.id}>
                 <div className="col-span-6">
                   {item?.imageUrl && 
                     <IKContext urlEndpoint={imageBaseurl.imageBase}>

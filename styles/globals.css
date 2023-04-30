@@ -35,6 +35,7 @@
   --yucca-hex: #78938a;
   --dark-sea-green-hex: #92ba92;
   --gray-hex: #ecebee;
+  --dark-color-hex: #231F20;
 
 
 
@@ -70,4 +71,8 @@ a.nav-link:hover{
   border-width: 2px;
   border-style: solid;
   border-color: var(--border-color-hex);
+}
+
+.active button {
+  background-color: #968344;
 }

@@ -94,7 +94,7 @@ export default function Contact() {
         <>
             <section className={`contact-container grid grid-cols-12 gap-4 m-8`}>
                 <div className="col-span-3"></div>
-                <Paper elevation={4} className={`grid col-span-6 bg-card-background ${style.formContainer}`}>
+                <Paper elevation={0} className={`grid col-span-6 bg-cardBackground border border-solid border-pegasus-200 ${style.formContainer}`}>
                     <div className='contact-form-container'>
                         <div className=''>
                             <Box
@@ -158,8 +158,8 @@ export default function Contact() {
                                         />
                                     </div>
                                     <div className="action-buttons flex justify-end mt-4 mb-8">
-                                        <Button variant="contained" size="medium" className='m-4 bg-teal-900' onClick={(event) => handleSubmit(event)}>Submit</Button>
-                                        <Button variant="contained" size="medium" className='m-4 bg-button-color' onClick={(event) => resetForm(event)}>Reset</Button>
+                                        <Button variant="contained" size="medium" className='m-4 bg-gremlin-50 hover:bg-gremlin-200' onClick={(event) => handleSubmit(event)}>Submit</Button>
+                                        <Button variant="contained" size="medium" className='m-4 bg-gremlin-900 hover:bg-pegasus-700' onClick={(event) => resetForm(event)}>Reset</Button>
                                     </div>
                             </Box>
                         </div>

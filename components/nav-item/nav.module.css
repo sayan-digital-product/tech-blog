@@ -11,7 +11,3 @@
 .secondaryText{
     color: var(--secondary-text);
 }
-
-.secondaryText:hover{
-    color: var(--light-green-rgb);
-}

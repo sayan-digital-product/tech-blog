@@ -17,11 +17,11 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      'white': '#ffffff',
-      'error': '#ff0000',
-      'button-color': '#FA2742',
-      'card-background': '#eaece6',
-      'teal': {
+      white: '#ffffff',
+      error: '#ff0000',
+      buttonColor: '#AD974F',
+      cardBackground: '#eaece6',
+      teal: {
         50: '#f0fdfa',
         100: '#ccfbf1',
         200: '#99f6e4',
@@ -34,7 +34,7 @@ module.exports = {
         900: '#134e4a',
         950: '#042f2e'
       },
-      'dark': {
+      dark: {
         50: '#f0fdfa',
         100: '#ccfbf1',
         200: '#99f6e4',
@@ -46,9 +46,8 @@ module.exports = {
         800: '#115e59',
         900: '#134e4a',
         950: '#042f2e'
-      }
-    },
-    'pegasus':{
+      },
+      pegasus:{
         50: '#e8eae3',
         100: '#cacbc5',
         200: '#acaea8',
@@ -59,6 +58,19 @@ module.exports = {
         700: '#292927',
         800: '#131312',
         900: '#030303'
+      },
+      gremlin:{
+        50: '#ad974f',
+        100: '#968344',
+        200: '#7f6f38',
+        300: '#6a5c2e',
+        400: '#554923',
+        500: '#413719',
+        600: '#2d2610',
+        700: '#1b1707',
+        800: '#0b0802',
+        900: '#010100'
+      }
     }
   },
   plugins: [],

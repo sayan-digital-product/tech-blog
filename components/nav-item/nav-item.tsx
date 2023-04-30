@@ -29,10 +29,10 @@ export default function ApplicationNavbar() {
                                 <NavLink 
                                     rel="noopener"
                                     aria-label={item.name}
-                                    className="nav-link-icon"
+                                    className={`nav-link-icon`}
                                     href={item.url ? item.url : '#'}
                                 >
-                                    <Button variant="text" color="primary" className={style.secondaryText}>
+                                    <Button variant="text" color="primary" className={`hover:bg-gremlin-50 active:bg-gremlin-100 ${style.secondaryText}`}>
                                         {item.name}
                                     </Button>
                                 </NavLink>
