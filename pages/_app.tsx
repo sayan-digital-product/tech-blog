@@ -18,12 +18,10 @@ export default function App({ Component, pageProps }: AppProps) {
           <ApplicationNavbar />
         </section>
       </section>
-      <main className={`minimum-height grid grid-cols-12 justify-between ${style.pageContainer}`}>
-        <section className="col-span-1"></section>
-        <section className="col-span-10">
+      <main className={`grid grid-cols-12 justify-between ${style.pageContainer}`}>
+        <section className="col-span-12">
           <Component {...pageProps} />
         </section>
-        <section className="col-span-1"></section>
       </main>
       <section>
         <Footer />

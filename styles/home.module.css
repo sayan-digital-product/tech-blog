@@ -1,10 +1,9 @@
 .footerContainer{
     border-top: 1px solid #222;
     height: 6rem;
-    margin-top: 2rem;
     bottom: 0;
     width: 100%;
-    background: var(--navbar-hex);
+    background: var(--midnight-shadow-hex);
     color: var(--secondary-text);
 }
 
@@ -13,20 +12,24 @@
     position: relative;
 }
 
+.homeBackground {
+    background: -webkit-linear-gradient(360deg, var(--gray-hex) 55%, var(--midnight-shadow-hex) 35%);
+    min-height: calc(100vh - 11rem);
+}
+
 .applicationNavcontainer {
     border-top: 1px solid #222;
     height: 5rem;
     position: sticky;
     top: 0;
     width: 100%;
-    background: var(--navbar-hex);
+    background: var(--midnight-shadow-hex);
     z-index: 10;
     align-content: center;
     justify-items: center;
 }
 
 .profileContainer{
-    height: 75vh;
     display: grid;
     align-content: center;
     padding-left: 1rem;

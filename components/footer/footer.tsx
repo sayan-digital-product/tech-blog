@@ -21,7 +21,7 @@ export default function Footer() {
                 <section className="grid grid-rows-1 grid-cols-2 gap-4">
                 <div className="cols-span-1"></div>
                 <div className="col-span-1 grid justify-center">
-                    <div className="grid grid-cols-3 gap-4 justify-items-end">
+                    <div className="grid grid-cols-3 justify-items-end">
                         <IconButton
                             size="large"
                             aria-label="Twitter"

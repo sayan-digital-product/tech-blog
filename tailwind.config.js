@@ -19,6 +19,8 @@ module.exports = {
       current: 'currentColor',
       'white': '#ffffff',
       'error': '#ff0000',
+      'button-color': '#FA2742',
+      'card-background': '#eaece6',
       'teal': {
         50: '#f0fdfa',
         100: '#ccfbf1',
@@ -45,6 +47,18 @@ module.exports = {
         900: '#134e4a',
         950: '#042f2e'
       }
+    },
+    'pegasus':{
+        50: '#e8eae3',
+        100: '#cacbc5',
+        200: '#acaea8',
+        300: '#90918c',
+        400: '#747571',
+        500: '#595a57',
+        600: '#40413f',
+        700: '#292927',
+        800: '#131312',
+        900: '#030303'
     }
   },
   plugins: [],

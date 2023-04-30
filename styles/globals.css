@@ -19,16 +19,23 @@
  
 :root {
   --foreground-rgb: 0, 0, 0;
+  --white-text-hex:  #f1f1f1;
   --background-start-rgb: #F3EFE0;
-  /* --background-hex: #faf0e6; */
   --background-hex: #EFEFEF;
   --secondary-text: #f8f8f8;
   --light-green-rgb: #57f71e;
   --dark-color-hex: #4D455D;
   --navbar-hex: #004953;
   --color-primary: 255 115 179;
-
   --border-color-hex: rgb(248, 224, 199);
+
+  --midnight-shadow-hex: #525e75;
+  --cameo-hex: #f1ddbf;
+  --cameo-light-hex: #f7ebd9;
+  --yucca-hex: #78938a;
+  --dark-sea-green-hex: #92ba92;
+  --gray-hex: #ecebee;
+
 
 
 }
@@ -44,8 +51,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   font-family: CalibreRegular;
-  background: var(--background-hex);
-    /* background: -webkit-linear-gradient(360deg, var(--background-start-rgb) 45%, var(--background-end-rgb) 45%) */
+  background: var(--gray-hex);
 }
 
 a.nav-link:hover{

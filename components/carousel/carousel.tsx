@@ -22,7 +22,7 @@ export default function ResponsiveCarousel() {
             interval={2000}
           >
             {slides.map((item: SlidesModel) => (
-              <div className={`grid grid-cols-12 ${style.carouselContainer}`} key={item.id}>
+              <div className={`grid grid-cols-12 bg-card-background ${style.carouselContainer}`} key={item.id}>
                 <div className="col-span-6">
                   {item?.imageUrl && 
                     <IKContext urlEndpoint={imageBaseurl.imageBase}>

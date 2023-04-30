@@ -1,7 +1,7 @@
 .navbarContainer::after{
     display: block;
     width: 40%;
-    background-color: var(--navbar-hex);
+    background-color: var(--yucca-hex);
     position: fixed;
     right: 0;
     color: inherit;

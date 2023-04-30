@@ -12,7 +12,7 @@ export default function BlogSlides() {
 
     return(
         <>
-            <section className='m-4'>
+            <section className='m-4 minimum-height'>
                     <Paper elevation={3} sx={{height: '55vh'}} className={style.headSection}>
                         <ResponsiveCarousel />
                     </Paper>

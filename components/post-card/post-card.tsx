@@ -7,10 +7,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 import { PostcardModel } from './post-card.interface';
+import style from './post-card.module.css';
 
 export default function PostCard({data}: {data: PostcardModel}) {
   return (
-    <Card elevation={2}>
+    <Card elevation={2} className='bg-card-background'>
       <CardMedia
         component="img"
         sx={{ height: 140 }}
@@ -26,8 +27,8 @@ export default function PostCard({data}: {data: PostcardModel}) {
         })}
       </CardContent>
       <CardActions className='justify-end'>
-        <Button color="primary" variant="text" size="small">
-          {data.linkUrl && <Link href={data.linkUrl}>
+        <Button variant="text" size="small" className='bg-button-color'>
+          {data.linkUrl && <Link href={data.linkUrl} className={style.textColor}>
             Read more
           </Link>}
         </Button>

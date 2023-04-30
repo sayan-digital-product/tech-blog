@@ -9,11 +9,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <section>
-      <Paper elevation={0} className={`grid grid-cols-12 generic-border ${style.profileContainer} m-8`}>
-        <div className="col-span-6">
-          <Image alt='profile-image' src={'/images/1.jpg'} className={style.fullImage} width={500} height={500}></Image>
-        </div>
+    <section className={`grid grid-cols-12 ${style.profileContainer} ${style.homeBackground}`}>
+      {/* <Paper elevation={0} className={`grid grid-cols-12 generic-border ${style.profileContainer} m-8`}> */}
         <div className="col-span-6">
           <div className={`secondary-text ${style.tagLineStyle}`}>
             <Typography variant="h2">
@@ -27,7 +24,10 @@ export default function Home() {
               </p>
           </div>
         </div>
-      </Paper>
+        <div className="col-span-6">
+          <Image alt='profile-image' src={'/images/profile.png'} className={style.fullImage} width={500} height={500}></Image>
+        </div>
+      {/* </Paper> */}
     </section>
   )
 }
