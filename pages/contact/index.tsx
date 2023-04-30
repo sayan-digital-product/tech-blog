@@ -46,13 +46,17 @@ export default function Contact() {
     data.append("email", formData.email);
     data.append("reason", formData.reason);
     data.append("message", formData.message);
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
+    const current = form.current || '';
 
     emailjs
       .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        serviceId,
+        templateId,
+        current,
+        publicKey
       )
       .then(
         (result) => {
