@@ -8,6 +8,6 @@
     padding: .5rem;
 }
 
-.secondaryText{
+button.secondaryText{
     color: var(--secondary-text);
 }
