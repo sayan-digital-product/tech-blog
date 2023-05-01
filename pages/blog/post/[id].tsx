@@ -1,8 +1,6 @@
 import Layout from '@santech/components/layout/layout';
 import { getAllPostIds, getPostData } from '@santech/core/posts/posts';
-import { PostModel } from './post.interface';
-import { IKContext, IKImage } from 'imagekitio-react';
-import { imageBaseurl } from '@santech/core/config/app.config';
+import { PostModel } from '@santech/core/models/post.interface';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardMedia from '@mui/material/CardMedia';
