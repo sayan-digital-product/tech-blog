@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 @font-face {
 	font-family: CalibreBold;
@@ -76,3 +74,7 @@ a.nav-link:hover{
 .active button {
   background-color: #968344;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
