@@ -11,15 +11,10 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useForm, Controller } from 'react-hook-form';
 
 export default function Contact() {
 
-    const [formData, setFormData] = React.useState({
-        name: "",
-        email: "",
-        reason: "",
-        message: ""
-    });
     const form = useRef<HTMLFormElement>();
     const [alert, setAlert] = React.useState({
         color: "",
@@ -27,25 +22,9 @@ export default function Contact() {
         message: ""
     });
 
-  const successAlert = {
-    color: "success",
-    icon: "ni ni-like-2",
-    message: " Your message has been sent successfully!",
-  };
-
-  const errorAlert = {
-    color: "danger",
-    icon: "ni ni-bell-55",
-    message: " Oops! Something went wrong. Please try again later.",
-  };
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    let data = new FormData();
-    data.append("name", formData.name);
-    data.append("email", formData.email);
-    data.append("reason", formData.reason);
-    data.append("message", formData.message);
+  const { register, handleSubmit, control, formState: {errors}, reset } = useForm();
+  const onSubmit = (data: any) => {
+    console.log(data);
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
@@ -68,31 +47,28 @@ export default function Contact() {
           setAlert(errorAlert);
         }
       );
-    };
+  }
 
+  const successAlert = {
+    color: "success",
+    icon: "ni ni-like-2",
+    message: " Your message has been sent successfully!",
+  };
 
-    const handleChange = (e: any) => {
-        const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value,
-        });
-      };
+  const errorAlert = {
+    color: "danger",
+    icon: "ni ni-bell-55",
+    message: " Oops! Something went wrong. Please try again later.",
+  };
 
-    const resetForm = (e: any) => {
-        const defaultForm = {
-            name: "",
-            email: "",
-            reason: "",
-            message: ""
-        }
-        setFormData(defaultForm);
-    }
-    
-
-    // function handleSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
-    //     console.log("Hello");
-    // }
+  const resetForm = (e: any) => {
+      const defaultForm = {
+          name: "",
+          email: "",
+          reason: "",
+          message: ""
+      }
+  }
 
     return(
         <>
@@ -110,7 +86,7 @@ export default function Contact() {
                             autoComplete="off"
                             className={`m-4 ${style.formWrapper}`}
                             ref={form}
-                            onSubmit={(event) => handleSubmit(event)}
+                            onSubmit={handleSubmit(onSubmit)}
                             >
                                     <div className='grid justify-center'>
                                         <Typography variant='h6' className='secondary-text'>
@@ -118,30 +94,52 @@ export default function Contact() {
                                         </Typography>
                                     </div>
                                     <div className='mt-12'>
-                                        <TextField
-                                        id="user-name"
-                                        label="Name"
+                                      <Controller
+                                        control={control}
                                         name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        />
+                                        defaultValue=""
+                                        render={({ field }) => 
+                                          <TextField
+                                            {...field}
+                                            id="user-name"
+                                            label="Name"
+                                            error={!!errors.name}
+                                            helperText={errors.name ? "Please provide input" : ''}
+                                            required
+                                            />
+                                        }
+                                      />
+                                      <Controller
+                                        control={control}
+                                        name="email"
+                                        defaultValue=""
+                                        render={({ field }) => 
                                         <TextField
+                                        {...field}
                                         id="user-email"
                                         label="Email"
                                         placeholder="Email id"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
+                                        type="email"
+                                        aria-invalid={errors.email ? "true" : "false"}
+                                        helperText={errors.email ? "Please provide input" : ''}
+                                        required
                                         />
-                                        <FormControl sx={{ m: 1, minWidth: '96%' }} size="small">
-                                            <InputLabel id="demo-select-small-label">Reason</InputLabel>
+                                      } />
+                                      <Controller 
+                                        name={'reason'}
+                                        control={control}
+                                        defaultValue=""
+                                        render={({field}) => 
+                                        <>
+                                          <FormControl sx={{ m: 1, minWidth: '96%' }} size="small">
+                                           <InputLabel id="demo-select-small-label">Reason</InputLabel>
                                             <Select
+                                                {...field}
                                                 labelId="demo-select-small-label"
                                                 id="demo-select-small"
-                                                value={formData.reason}
-                                                label="Age"
-                                                name="reason"
-                                                onChange={handleChange}
+                                                label="Reason"
+                                                error={!!errors.reason}
+                                                required
                                             >
                                                 <MenuItem value="">
                                                 <em>None</em>
@@ -151,20 +149,37 @@ export default function Contact() {
                                                 <MenuItem value={'Specific problem'}>About specific problem</MenuItem>
                                                 <MenuItem value={'Other'}>Other</MenuItem>
                                             </Select>
-                                        </FormControl>
+                                          </FormControl>
+                                        </>
+                                      }
+                                      />
+                                      <Controller 
+                                        name="message"
+                                        control={control}
+                                        render={({field}) => 
                                         <TextField
+                                        {...field}
                                         id="user-message"
                                         label="Message"
-                                        name="message"
-                                        value={formData.message}
-                                        onChange={handleChange}
+                                        type='textarea'
                                         multiline
                                         rows={5}
                                         />
+                                    }/>
                                     </div>
                                     <div className="action-buttons flex justify-end mt-4 mb-8">
                                         <Button type="submit" variant="contained" size="medium" className='m-4 bg-gremlin-50 hover:bg-gremlin-200'>Submit</Button>
-                                        <Button variant="contained" size="medium" className='m-4 bg-gremlin-900 hover:bg-pegasus-700' onClick={(event) => resetForm(event)}>Reset</Button>
+                                        <Button variant="contained" size="medium" className='m-4 bg-gremlin-900 hover:bg-pegasus-700'onClick={() => {
+                                                reset(formValues => ({
+                                                  ...formValues, 
+                                                  name: '', 
+                                                  email: '',
+                                                  reason: '',
+                                                  message: ''
+                                                }))
+                                              }}
+                                        >Reset
+                                        </Button>
                                     </div>
                             </Box>
                         </div>
