@@ -1,5 +1,5 @@
 import Paper from '@mui/material/Paper';
-import React, { useRef } from 'react';
+import React, { FormEvent, useRef } from 'react';
 import emailjs from "@emailjs/browser";
 
 import style from './contact.module.css';
@@ -39,7 +39,7 @@ export default function Contact() {
     message: " Oops! Something went wrong. Please try again later.",
   };
 
-  const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     let data = new FormData();
     data.append("name", formData.name);
@@ -110,6 +110,7 @@ export default function Contact() {
                             autoComplete="off"
                             className={`m-4 ${style.formWrapper}`}
                             ref={form}
+                            onSubmit={(event) => handleSubmit(event)}
                             >
                                     <div className='grid justify-center'>
                                         <Typography variant='h6' className='secondary-text'>
@@ -162,7 +163,7 @@ export default function Contact() {
                                         />
                                     </div>
                                     <div className="action-buttons flex justify-end mt-4 mb-8">
-                                        <Button variant="contained" size="medium" className='m-4 bg-gremlin-50 hover:bg-gremlin-200' onClick={(event) => handleSubmit(event)}>Submit</Button>
+                                        <Button type="submit" variant="contained" size="medium" className='m-4 bg-gremlin-50 hover:bg-gremlin-200'>Submit</Button>
                                         <Button variant="contained" size="medium" className='m-4 bg-gremlin-900 hover:bg-pegasus-700' onClick={(event) => resetForm(event)}>Reset</Button>
                                     </div>
                             </Box>
