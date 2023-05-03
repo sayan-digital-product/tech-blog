@@ -4,18 +4,23 @@ import emailjs from "@emailjs/browser";
 
 import style from './contact.module.css';
 import Box from '@mui/material/Box';
+import { useForm, Controller } from 'react-hook-form';
+import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
+import FormHelperText from '@mui/material/FormHelperText';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { useForm, Controller } from 'react-hook-form';
+
 
 export default function Contact() {
 
     const form = useRef<HTMLFormElement>();
+    const [open, setOpen] = React.useState(false);
     const [alert, setAlert] = React.useState({
         color: "",
         icon: "",
@@ -40,10 +45,20 @@ export default function Contact() {
       .then(
         (result) => {
           console.log(result.text);
-          setAlert(successAlert);
+          setOpen(true);
+          reset({ name: '', 
+          email: '',
+          reason: '',
+          message: ''})
+          { result && 
+          setAlert(successAlert);}
         },
         (error) => {
           console.log(error.text);
+          reset({ name: '', 
+          email: '',
+          reason: '',
+          message: ''})
           setAlert(errorAlert);
         }
       );
@@ -60,15 +75,6 @@ export default function Contact() {
     icon: "ni ni-bell-55",
     message: " Oops! Something went wrong. Please try again later.",
   };
-
-  const resetForm = (e: any) => {
-      const defaultForm = {
-          name: "",
-          email: "",
-          reason: "",
-          message: ""
-      }
-  }
 
     return(
         <>
@@ -98,13 +104,17 @@ export default function Contact() {
                                         control={control}
                                         name="name"
                                         defaultValue=""
+                                        rules={{
+                                            required: {value: true, message: 'This is a mandatory field'}
+                                        }}
                                         render={({ field }) => 
                                           <TextField
                                             {...field}
                                             id="user-name"
+                                            placeholder="User name"
                                             label="Name"
                                             error={!!errors.name}
-                                            helperText={errors.name ? "Please provide input" : ''}
+                                            helperText={errors.name ? 'This is a mandatory field' : ''}
                                             required
                                             />
                                         }
@@ -113,15 +123,18 @@ export default function Contact() {
                                         control={control}
                                         name="email"
                                         defaultValue=""
+                                        rules={{
+                                          required: {value: true, message: 'This is a mandatory field'}
+                                        }}
                                         render={({ field }) => 
                                         <TextField
                                         {...field}
                                         id="user-email"
                                         label="Email"
-                                        placeholder="Email id"
+                                        placeholder="example@test.com"
+                                        error={!!errors.email}
                                         type="email"
-                                        aria-invalid={errors.email ? "true" : "false"}
-                                        helperText={errors.email ? "Please provide input" : ''}
+                                        helperText={errors.email ? "This is a mandatory field" : ''}
                                         required
                                         />
                                       } />
@@ -129,10 +142,13 @@ export default function Contact() {
                                         name={'reason'}
                                         control={control}
                                         defaultValue=""
+                                        rules={{
+                                          required: {value: true, message: 'This is a mandatory field'}
+                                        }}
                                         render={({field}) => 
                                         <>
                                           <FormControl sx={{ m: 1, minWidth: '96%' }} size="small">
-                                           <InputLabel id="demo-select-small-label">Reason</InputLabel>
+                                           <InputLabel id="demo-select-small-label" required>Reason</InputLabel>
                                             <Select
                                                 {...field}
                                                 labelId="demo-select-small-label"
@@ -149,6 +165,7 @@ export default function Contact() {
                                                 <MenuItem value={'Specific problem'}>About specific problem</MenuItem>
                                                 <MenuItem value={'Other'}>Other</MenuItem>
                                             </Select>
+                                            {errors?.reason && <FormHelperText className='text-error'>Please select an option before proceeding</FormHelperText>}
                                           </FormControl>
                                         </>
                                       }
@@ -169,7 +186,7 @@ export default function Contact() {
                                     </div>
                                     <div className="action-buttons flex justify-end mt-4 mb-8">
                                         <Button type="submit" variant="contained" size="medium" className='m-4 bg-gremlin-50 hover:bg-gremlin-200'>Submit</Button>
-                                        <Button variant="contained" size="medium" className='m-4 bg-gremlin-900 hover:bg-pegasus-700'onClick={() => {
+                                        <Button variant="contained" size="medium" className='m-4 bg-gremlin-900 hover:bg-pegasus-700' onClick={() => {
                                                 reset(formValues => ({
                                                   ...formValues, 
                                                   name: '', 

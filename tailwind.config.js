@@ -20,7 +20,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       white: '#ffffff',
-      error: '#ff0000',
+      error: '#D32F2F',
       buttonColor: '#AD974F',
       cardBackground: '#eaece6',
       teal: {
