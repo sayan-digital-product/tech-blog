@@ -154,7 +154,7 @@ export default function Contact() {
                                                 <MenuItem value={'Specific problem'}>About specific problem</MenuItem>
                                                 <MenuItem value={'Other'}>Other</MenuItem>
                                             </Select>
-                                            {errors?.reason && <FormHelperText className='text-error'>Please select an option before proceeding</FormHelperText>}
+                                            {errors?.reason && <FormHelperText className='text-error'>Please select an option to proceed</FormHelperText>}
                                           </FormControl>
                                         </>
                                       }
