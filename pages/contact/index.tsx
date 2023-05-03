@@ -8,33 +8,34 @@ import { useForm, Controller } from 'react-hook-form';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import FormHelperText from '@mui/material/FormHelperText';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert, { AlertColor, AlertProps } from '@mui/material/Alert';
 
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref,
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 export default function Contact() {
 
-    const form = useRef<HTMLFormElement>();
-    const [open, setOpen] = React.useState(false);
-    const [alert, setAlert] = React.useState({
-        color: "",
-        icon: "",
-        message: ""
-    });
-
+  const form = useRef<HTMLFormElement>();
+  const [open, setOpen] = React.useState(false);
+  const [severity, setSeverity] = React.useState<AlertColor>('success');
   const { register, handleSubmit, control, formState: {errors}, reset } = useForm();
+
   const onSubmit = (data: any) => {
-    console.log(data);
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
     const current = form.current || '';
-
     emailjs
       .sendForm(
         serviceId,
@@ -45,35 +46,23 @@ export default function Contact() {
       .then(
         (result) => {
           console.log(result.text);
+          setSeverity('success');
           setOpen(true);
-          reset({ name: '', 
-          email: '',
-          reason: '',
-          message: ''})
-          { result && 
-          setAlert(successAlert);}
+          reset();
         },
         (error) => {
-          console.log(error.text);
-          reset({ name: '', 
-          email: '',
-          reason: '',
-          message: ''})
-          setAlert(errorAlert);
+          setSeverity('error');
+          setOpen(true)
+          reset();
         }
       );
   }
 
-  const successAlert = {
-    color: "success",
-    icon: "ni ni-like-2",
-    message: " Your message has been sent successfully!",
-  };
-
-  const errorAlert = {
-    color: "danger",
-    icon: "ni ni-bell-55",
-    message: " Oops! Something went wrong. Please try again later.",
+  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
   };
 
     return(
@@ -204,6 +193,13 @@ export default function Contact() {
                 </Paper>
                 <div className="col-span-3"></div>
             </section>
+            <Stack spacing={2} sx={{ width: '100%' }}>
+              <Snackbar open={open} anchorOrigin={{vertical:'top', horizontal:'center'}} autoHideDuration={6000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity={severity} sx={{ width: '100%' }}>
+                  {severity && severity === 'success' ? <span>Your message has been sent successfully!</span> : <span>System error occured, please try after sometime!</span>}
+                </Alert>
+              </Snackbar>
+            </Stack>
         </>
     )
 }
