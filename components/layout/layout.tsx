@@ -1,8 +1,6 @@
-import Head from 'next/head'
-import Image from 'next/image'
+
 import styles from './layout.module.css'
-import Link from 'next/link'
-import { JsxElement } from 'typescript'
+
 
 const name = '[SAYAN BANERJEE]'
 export const siteTitle = 'Next.js Sample Website'

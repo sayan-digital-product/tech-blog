@@ -3,7 +3,7 @@
     height: 6rem;
     bottom: 0;
     width: 100%;
-    background: var(--dark-color-hex);
+    background: var(--royal-blue-hex);
     color: var(--secondary-text);
 }
 
@@ -13,7 +13,7 @@
 }
 
 .homeBackground {
-    background: -webkit-linear-gradient(360deg, var(--gray-hex) 55%, var(--cameo-hex) 35%);
+    /* background: -webkit-linear-gradient(360deg, var(--gray-hex) 35%, var(--cameo-hex) 55%); */
     min-height: calc(100vh - 11rem);
 }
 
@@ -23,7 +23,7 @@
     position: sticky;
     top: 0;
     width: 100%;
-    background: var(--dark-color-hex);
+    background: var(--royal-blue-hex);
     z-index: 10;
     align-content: center;
     justify-items: center;
@@ -31,8 +31,8 @@
 
 .profileContainer{
     display: grid;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    /* padding-left: 1rem;
+    padding-right: 1rem; */
 }
 
 .nameFont {

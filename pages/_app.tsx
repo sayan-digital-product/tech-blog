@@ -11,14 +11,14 @@ export default function App({ Component, pageProps }: AppProps) {
   return(
     <>
       <section className={`grid grid-cols-3 justify-end shadow-md ${style.applicationNavcontainer}`}>
-        <section className='col-span-2'>
+        <section className='col-span-1'>
 
         </section>
-        <section className='header-container col-span-1'>
+        <section className='header-container col-span-2'>
           <ApplicationNavbar />
         </section>
       </section>
-      <main className={`grid grid-cols-12 justify-between ${style.pageContainer}`}>
+      <main className={`grid grid-cols-12 ${style.pageContainer}`}>
         <section className="col-span-12">
           <Component {...pageProps} />
         </section>

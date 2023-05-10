@@ -11,7 +11,7 @@ import style from './post-card.module.css';
 
 export default function PostCard({data}: {data: PostcardModel}) {
   return (
-    <Card elevation={0} className='bg-cardBackground border border-solid border-pegasus-100'>
+    <Card elevation={0} className='border border-solid border-pegasus-100'>
       <CardMedia
         component="img"
         sx={{ height: 140 }}
@@ -27,7 +27,7 @@ export default function PostCard({data}: {data: PostcardModel}) {
         })}
       </CardContent>
       <CardActions className='justify-end'>
-        <Button variant="text" size="small" className='bg-gremlin-50 hover:bg-gremlin-200'>
+        <Button variant="text" size="small" className='bg-pineapple-50 hover:bg-gremlin-200'>
           {data.linkUrl && <Link href={data.linkUrl} className={style.textColor}>
             Read more
           </Link>}

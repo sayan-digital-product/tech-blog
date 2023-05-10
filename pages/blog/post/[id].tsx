@@ -7,7 +7,6 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardActions from '@mui/material/CardActions';
-import Button from '@mui/material/Button';
 
 export async function getStaticProps({ params }:{params: any}) {
   const postData = await getPostData(params.id);
@@ -30,15 +29,14 @@ export default function Post({ postData }: {postData: PostModel}) {
     return (
       <Layout>
         <>
-          <Card elevation={0} className='minimum-height border border-solid border-pegasus-200 bg-cardBackground'>
-            <CardActionArea>
-                <CardMedia
+          <Card elevation={0} className='minimum-height'>
+                {/* <CardMedia
                   component="img"
                   height="140"
                   image={postData.imageUrl}
                   alt="green iguana"
-                />
-                <CardContent>
+                /> */}
+                <CardContent className='m-8'>
                   <Typography gutterBottom variant="h5" component="div">
                     {postData.title}
                   </Typography>
@@ -49,7 +47,6 @@ export default function Post({ postData }: {postData: PostModel}) {
                     <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
                   </Typography>
                 </CardContent>
-            </CardActionArea>
             <CardActions>
               {/* <Button size="small" color="primary">
                 Share

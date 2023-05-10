@@ -6,6 +6,11 @@ export const navbarList = [
         url: "/"
     },
     {
+        name: "About",
+        key: "aboutme",
+        url: "/about-me"
+    },
+    {
         name: "Posts",
         key: "posts",
         url: "/blog"
