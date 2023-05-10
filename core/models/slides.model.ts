@@ -3,4 +3,5 @@ export interface SlidesModel {
     text: string;
     imageUrl: string;
     id: number;
+    linkUrl?: string;
 }

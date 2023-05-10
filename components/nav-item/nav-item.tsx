@@ -32,7 +32,7 @@ export default function ApplicationNavbar() {
                                     className={`nav-link-icon`}
                                     href={item.url ? item.url : '#'}
                                 >
-                                    <Button variant="text" color="primary" className={`hover:bg-pineapple-50 active:bg-gremlin-100 ${style.secondaryText}`}>
+                                    <Button variant="text" color="primary" className={`hover:bg-turqDark-300 active:bg-gremlin-100 ${style.secondaryText}`}>
                                         {item.name}
                                     </Button>
                                 </NavLink>

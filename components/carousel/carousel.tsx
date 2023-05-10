@@ -7,6 +7,8 @@ import { SlidesModel } from "@santech/core/models/slides.model";
 import style from './carousel.module.css';
 import { IKImage, IKContext } from 'imagekitio-react'
 import { imageBaseurl } from '@santech/core/config/app.config';
+import Link from "@mui/material/Link";
+import Button from "@mui/material/Button";
 
 
 export default function ResponsiveCarousel() {
@@ -35,7 +37,12 @@ export default function ResponsiveCarousel() {
                 </div>
                 <div className="grid col-span-6 content-center">
                   <h2>{item.title}</h2>
-                  <p>{item.text}</p>
+                  <section>{item.text}</section>
+                  {item.linkUrl && <Button variant='text' size='small' className='hover:underline-offset-4 hover:underline'>
+                    <Link href={item.linkUrl} className={style.textColor}>
+                      Read more
+                    </Link>
+                  </Button>}
                 </div>
               </div>
             ))}

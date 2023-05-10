@@ -30,12 +30,6 @@ export default function Post({ postData }: {postData: PostModel}) {
       <Layout>
         <>
           <Card elevation={0} className='minimum-height'>
-                {/* <CardMedia
-                  component="img"
-                  height="140"
-                  image={postData.imageUrl}
-                  alt="green iguana"
-                /> */}
                 <CardContent className='m-8'>
                   <Typography gutterBottom variant="h5" component="div">
                     {postData.title}
@@ -43,15 +37,10 @@ export default function Post({ postData }: {postData: PostModel}) {
                   <Typography gutterBottom variant='h6' component="div">
                     {postData.date}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <section color="text.secondary">
                     <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-                  </Typography>
+                  </section>
                 </CardContent>
-            <CardActions>
-              {/* <Button size="small" color="primary">
-                Share
-              </Button> */}
-            </CardActions>
           </Card>
         </>
       </Layout>
