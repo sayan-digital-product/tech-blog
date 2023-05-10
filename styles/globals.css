@@ -36,6 +36,7 @@
   --royal-blue-hex: #070A52;
   --background-plain-hex: #FFFFFF;
   --frost-fairy-hex: #dfe9f8;
+  --pegasus-50-hex: #e8eae3;
 
 
 
@@ -52,7 +53,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   font-family: CalibreRegular;
-  background: var(--frost-fairy-hex);
+  background: var(--pegasus-50-hex);
 }
 
 a.nav-link:hover{

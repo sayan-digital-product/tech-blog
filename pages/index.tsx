@@ -32,7 +32,7 @@ export default function Home() {
               </section>
           </Parallax>
         </section>
-        <section className='bg-turqDark-400'>
+        <section className='bg-turqDark-500'>
           <Parallax
           scale={[0.80, 1]}
           easing="easeInQuad"
@@ -51,7 +51,7 @@ export default function Home() {
               </section>
           </Parallax>
         </section>
-        <section className='bg-pineapple-700'>
+        <section className='bg-mauveDark-100'>
           <Parallax
           scale={[.80, 1]}
           easing="easeInQuad"
@@ -70,7 +70,7 @@ export default function Home() {
               </section>
           </Parallax>
         </section>
-        <section>
+        <section className='bg-mintDark-400'>
           <Parallax
           scale={[.80, 1]}
           easing="easeInQuad"
@@ -78,7 +78,7 @@ export default function Home() {
               <section className={`grid grid-cols-12 gap-8 p-8 ${style.profileContainer} ${style.homeBackground}`}>
                 <div className="col-span-12 grid gap-4">
                   <section className='col-span-12 pl-4 grid justify-center'>
-                    <span className='p-8 text-6xl secondary'>Top Gadgets</span>
+                    <span className='p-8 text-6xl contrast-plain-text'>Top Gadgets</span>
                   </section>
                   <section className={`grid col-span-12 grid-cols-3 gap-4 ${style.containerSection}`}>
                       {latestByte && latestByte.map((item: DisplayCardModel, index: number) => {
