@@ -20,7 +20,7 @@ export default function ResponsiveCarousel() {
                 Read more
               </Link>);
     } else {
-      return (<span className={style.textColor}>COMING SOON....</span>)
+      return (<span className={style.textColor}>COMING SOON...</span>)
     }
 
   }
