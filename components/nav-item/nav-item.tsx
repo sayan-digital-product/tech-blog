@@ -11,8 +11,12 @@ import  { navbarList } from "@santech/core/config/app.config";
 import { NavbarModel } from "@santech/core/models/navbar.model";
 import style from './nav.module.css';
 import Button from "@mui/material/Button";
+import { useRouter } from 'next/router';
 
 export default function ApplicationNavbar() {
+
+    const router = useRouter();
+
     return(
         <>
             <header className="">
@@ -32,7 +36,7 @@ export default function ApplicationNavbar() {
                                     className={`nav-link-icon`}
                                     href={item.url ? item.url : '#'}
                                 >
-                                    <Button variant="text" color="primary" className={`hover:bg-turqDark-300 active:bg-gremlin-100 ${style.secondaryText}`}>
+                                    <Button variant="text" color="primary" className={`hover:bg-turqDark-400  ${style.secondaryText} ${router.pathname === item.url ? 'bg-turqDark-300' : ''}`}>
                                         {item.name}
                                     </Button>
                                 </NavLink>

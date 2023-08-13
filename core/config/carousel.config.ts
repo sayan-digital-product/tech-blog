@@ -1,7 +1,7 @@
 export const slides = [
   {
     "id": 1,
-    "title": "Swiper Carousel Example",
+    "title": "Developing Resilience: Bouncing Back from Failures in Your Coding Career",
     "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos mollitia sed quod consectetur at quam dolore praesentium neque eos assumenda iusto nam laborum laboriosam odio blanditiis possimus accusantium recusandae porro exercitationem itaque",
     "imageUrl": "https://ik.imagekit.io/gglohxep8/images/seo.jpg?updatedAt=1682626221504",
     "linkUrl": "/blog/post/ssg-ssr"
@@ -9,16 +9,16 @@ export const slides = [
  },
  {
    "id": 2,
-   "title": "Swiper Carousel Example",
+   "title": "Networking with Purpose: Building Authentic Connections in the IT Industry",
    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos mollitia sed quod consectetur at quam dolore praesentium neque eos assumenda iusto nam laborum laboriosam odio blanditiis possimus accusantium recusandae porro exercitationem itaque",
    "imageUrl": "https://ik.imagekit.io/gglohxep8/images/code_1.jpg?updatedAt=1682626224891",
-   "linkUrl": "/blog/post/ssg-ssr"
+   "linkUrl": ""
 },
 {
    "id": 3,
-   "title": "Swiper Carousel Example",
+   "title": "The Power of Curiosity: How Asking Questions Drives Innovation in Coding",
    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos mollitia sed quod consectetur at quam dolore praesentium neque eos assumenda iusto nam laborum laboriosam odio blanditiis possimus accusantium recusandae porro exercitationem itaque",
    "imageUrl": "https://ik.imagekit.io/gglohxep8/images/code_2.jpg?updatedAt=1682626222611",
-   "linkUrl": "/blog/post/ssg-ssr"
+   "linkUrl": ""
 }
 ];

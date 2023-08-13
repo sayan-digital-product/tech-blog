@@ -85,7 +85,7 @@ export default function Contact() {
                             >
                                     <div className='grid justify-center'>
                                         <Typography variant='h6' className='secondary-text'>
-                                            Please fill in the below details
+                                            *Please fill in the below details
                                         </Typography>
                                     </div>
                                     <div className='mt-12'>
@@ -175,7 +175,7 @@ export default function Contact() {
                                     }/>
                                     </div>
                                     <div className="action-buttons flex justify-end mt-4 mb-8">
-                                        <Button type="submit" variant="contained" size="medium" className='m-4 bg-pineapple-50 hover:bg-gremlin-200'>Submit</Button>
+                                        <Button type="submit" variant="contained" size="medium" className='m-4 bg-turqDark-500 hover:bg-turqDark-300'>Submit</Button>
                                         <Button variant="contained" size="medium" className='m-4 bg-error hover:bg-pegasus-700' onClick={() => {
                                                 reset(formValues => ({
                                                   ...formValues, 

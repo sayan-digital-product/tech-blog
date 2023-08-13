@@ -1,7 +1,7 @@
 
 import { Inter } from 'next/font/google'
 
-import { homeData, newsByte, latestByte } from '@santech/core/config/home.config';
+import { homeData, newsByte, latestByte, topStories, toolsTechnology } from '@santech/core/config/home.config';
 import style from '@santech/styles/home.module.css'
 import DisplayCard from '@santech/components/display-card/display-card';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
@@ -51,7 +51,7 @@ export default function Home() {
               </section>
           </Parallax>
         </section>
-        <section className='bg-mauveDark-100'>
+        <section className='bg-turqDark-500'>
           <Parallax
           scale={[.80, 1]}
           easing="easeInQuad"
@@ -59,10 +59,10 @@ export default function Home() {
               <section className={`grid grid-cols-12 gap-8 p-8 ${style.profileContainer} ${style.homeBackground}`}>
                 <div className="col-span-12 grid gap-4">
                   <section className='col-span-12 pl-4 grid justify-center'>
-                    <span className='p-8 text-6xl secondary'>Top stories</span>
+                    <span className='p-8 text-6xl contrast-plain-text'>Top stories</span>
                   </section>
                   <section className={`grid col-span-12 grid-cols-3 gap-4 ${style.containerSection}`}>
-                      {latestByte && latestByte.map((item: DisplayCardModel, index: number) => {
+                      {topStories && topStories.map((item: DisplayCardModel, index: number) => {
                           return <DisplayCard data={item} key={`top_ ${index}`} />
                       })}
                   </section>
@@ -70,7 +70,7 @@ export default function Home() {
               </section>
           </Parallax>
         </section>
-        <section className='bg-mintDark-400'>
+        <section className='bg-turqDark-500'>
           <Parallax
           scale={[.80, 1]}
           easing="easeInQuad"
@@ -81,7 +81,7 @@ export default function Home() {
                     <span className='p-8 text-6xl contrast-plain-text'>Top Gadgets</span>
                   </section>
                   <section className={`grid col-span-12 grid-cols-3 gap-4 ${style.containerSection}`}>
-                      {latestByte && latestByte.map((item: DisplayCardModel, index: number) => {
+                      {toolsTechnology && toolsTechnology.map((item: DisplayCardModel, index: number) => {
                           return <DisplayCard data={item} key={`gadgets_ ${index}`} />
                       })}
                   </section>

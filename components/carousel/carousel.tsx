@@ -13,6 +13,18 @@ import Button from "@mui/material/Button";
 
 export default function ResponsiveCarousel() {
 
+  const renderLink = (url: string | undefined) => {
+
+    if(url){
+      return (<Link href={url} className={style.textColor}>
+                Read more
+              </Link>);
+    } else {
+      return (<span className={style.textColor}>COMING SOON....</span>)
+    }
+
+  }
+
     return (
       <div> 
        <Carousel
@@ -36,12 +48,10 @@ export default function ResponsiveCarousel() {
                     </IKContext>}
                 </div>
                 <div className="grid col-span-6 content-center">
-                  <h2>{item.title}</h2>
+                  <h2  className="text-xl font-bold">{item.title}</h2>
                   <section>{item.text}</section>
-                  {item.linkUrl && <Button variant='text' size='small' className='hover:underline-offset-4 hover:underline'>
-                    <Link href={item.linkUrl} className={style.textColor}>
-                      Read more
-                    </Link>
+                  {item && <Button variant='text' size='small' className='hover:underline-offset-4 hover:underline'>
+                    {renderLink(item.linkUrl)}
                   </Button>}
                 </div>
               </div>
