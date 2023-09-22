@@ -72,7 +72,6 @@ a.nav-link:hover{
   overflow: hidden;
   /* white-space: nowrap; */
   -webkit-line-clamp: 2;
-  width: 300px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }

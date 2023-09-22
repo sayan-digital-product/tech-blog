@@ -1,12 +1,12 @@
 export const homeData = {
-    title: "The Growth Mindset: Cultivating a Positive Attitude for Career Success",
+    title: "Asia cup triumph",
     key: 1,
-    imageUrl: "https://ik.imagekit.io/gglohxep8/images/code_2.jpg?updatedAt=1682626222611",
-    subTitle: "21st century design",
+    imageUrl: "https://ik.imagekit.io/gglohxep8/images/Asiacup.jpeg?updatedAt=1695110655424",
+    subTitle: "Raising the bar",
     description: [
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos mollitia sed quod consectetur at quam dolore praesentium neque eos assumenda iusto nam laborum laboriosam odio blanditiis possimus accusantium recusandae porro exercitationem itaque"
+        "Asia cup 2023 has been concluded and team is gearing up for the upcoming three match series against Australia on home soil. There are few questions creeping up around the necessity of this series at this current stand point and whether it is going to take a toll on players after such a draining Asia cup campaign..."
     ],
-    linkUrl: "/blog/post/ssg-ssr",
+    linkUrl: "/blog/post/asiacup-triumph",
     cardProperties: {
         height: 350,
         elevation: 0,
@@ -24,7 +24,7 @@ export const homeData = {
             size: 'small',
             backgroundColor: 'text-gremlin-200',
             hover: 'hover: underline-offset-4',
-            linkUrl: "/blog/post/ssg-ssr",
+            linkUrl: "/blog/post/asiacup-triumph",
         }
     ]
 }
@@ -32,10 +32,10 @@ export const homeData = {
 export const newsByte = [
     {
         key: 1,
-        subTitle: "21st century design",
+        subTitle: "India go 1-0 up with a comprehensive victory",
         lineClamp: true,
         description: [
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quos mollitia sed quod consectetur at quam dolore praesentium neque eos assumenda iusto nam laborum laboriosam odio blanditiis possimus accusantium recusandae porro exercitationem itaque"
+            "Shami's five-fer and Shubman's flamboyent 74 had set the tone for victory. AUS-276/10(50), IND-281-5(48.4)"
         ],
         cardProperties: {
             elevation: 0,

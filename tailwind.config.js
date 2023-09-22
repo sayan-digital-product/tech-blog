@@ -136,6 +136,7 @@ module.exports = {
     }
   },
   plugins: [
-    'tailwindcss'
+    'tailwindcss',
+    require('@tailwindcss/typography')
   ],
 }

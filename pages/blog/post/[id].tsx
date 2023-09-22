@@ -38,7 +38,7 @@ export default function Post({ postData }: {postData: PostModel}) {
                     {postData.date}
                   </Typography>
                   <section color="text.secondary">
-                    <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+                    <article className="prose lg:prose-lg ul:prose-ul li:prose-li" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
                   </section>
                 </CardContent>
           </Card>
